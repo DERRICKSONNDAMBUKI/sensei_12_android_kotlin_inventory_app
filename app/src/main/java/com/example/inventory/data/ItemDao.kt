@@ -18,4 +18,7 @@ interface ItemDao {
     suspend fun delete(item: Item)
     @Query("select * from item where id = :id")
     fun getItem(id:Int):Flow<List<Item>>
+    @Query("select * from item")
+    fun getItems(): Flow<List<Item>>
+
 }
